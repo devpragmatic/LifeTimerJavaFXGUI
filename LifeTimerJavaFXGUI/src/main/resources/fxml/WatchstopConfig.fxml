@@ -25,7 +25,7 @@
             <Label minWidth="15">S:</Label>
             <NumberTextField fx:id="secondsField" maxlength="2" maxValue="59" ></NumberTextField>
             
-            <Button onAction="#start">Start</Button>
+            <Button minWidth="50" onAction="#start">Start</Button>
         </children>
     </HBox>
 </StackPane>

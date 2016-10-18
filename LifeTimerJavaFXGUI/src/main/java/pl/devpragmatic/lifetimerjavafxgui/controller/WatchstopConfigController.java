@@ -33,11 +33,16 @@ public class WatchstopConfigController implements Initializable {
     
     /**
      * Initializes the controller class.
-     * @param url
-     * @param rb
+     * @param location
+     * The location used to resolve relative paths for the root object, or
+     * <tt>null</tt> if the location is not known.
+     *
+     * @param resources
+     * The resources used to localize the root object, or <tt>null</tt> if
+     * the root object was not localized.
      */
     @Override
-    public void initialize(URL url, ResourceBundle rb) {
+    public void initialize(URL location, ResourceBundle resources) {
     }    
     
     @FXML
