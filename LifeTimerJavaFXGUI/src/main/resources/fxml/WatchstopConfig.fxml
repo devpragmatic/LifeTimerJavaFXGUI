@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import pl.devpragmatic.lifetimerjavafxgui.control.*?>
+<StackPane id="root" prefHeight="200.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.devpragmatic.lifetimerjavafxgui.controller.WatchstopConfigController">
+    <HBox alignment="center">
+        <stylesheets>
+            <URL value="@/styles/Styles.css"/>
+        </stylesheets>
+        <children>
+            <Label minWidth="15" >D:</Label>
+            <NumberTextField fx:id="daysField" maxlength="10"></NumberTextField>
+
+            <Label minWidth="15">H:</Label>
+            <NumberTextField fx:id="hoursField" maxlength="2" maxValue="23" ></NumberTextField>
+
+            <Label minWidth="15">M:</Label>
+            <NumberTextField fx:id="minutesField" maxlength="2" maxValue="59" ></NumberTextField>
+
+            <Label minWidth="15">S:</Label>
+            <NumberTextField fx:id="secondsField" maxlength="2" maxValue="59" ></NumberTextField>
+            
+            <Button onAction="#start">Start</Button>
+        </children>
+    </HBox>
+</StackPane>
