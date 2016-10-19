@@ -8,14 +8,14 @@ import javafx.scene.control.TextField;
  */
 public class NumberTextField extends TextField
 {
-    private int maxlength = 19;
+    private int maxLength = 19;
     private long maxValue = Long.MAX_VALUE;
-    public int getMaxlength() {
-        return maxlength;
+    public int getMaxLength() {
+        return maxLength;
     }
 
-    public void setMaxlength(int maxlength) {
-        this.maxlength = maxlength;
+    public void setMaxLength(int maxLength) {
+        this.maxLength = maxLength;
     }
 
     public long getMaxValue() {
@@ -26,12 +26,20 @@ public class NumberTextField extends TextField
         this.maxValue = maxValue;
     }
 
-    
+    /**
+     * Veryfing maxlength and number only text. Replace corrected text using super method.
+     *
+     * @param start The starting index in the range, inclusive. This must be &gt;= 0 and &lt; the end.
+     * @param end The ending index in the range, exclusive. This is one-past the last character to
+     *            delete (consistent with the String manipulation methods). This must be &gt; the start,
+     *            and &lt;= the length of the text.
+     * @param text The text that is to replace the range. This must not be null.
+     */
     @Override
     public void replaceText(int start, int end, String text) {
         if (validate(text)){
             String changedText = changeText(text, start, end);
-            if (text.equals("") || getText().length() < maxlength || end < getText().length() || (start != end && end == getText().length())) {
+            if (text.equals("") || getText().length() < maxLength || end < getText().length() || (start != end && end == getText().length())) {
                 if(text.equals(changedText))
                     super.replaceText(start, end, changedText);
                 else{
@@ -40,15 +48,19 @@ public class NumberTextField extends TextField
             }
         }
     }
-
+    
+    /**
+     * Veryfing maxlength and number only text. Replace corrected text using super method.
+     * @param text selection text to change
+     */
     @Override
     public void replaceSelection(String text) {
         if (validate(text)) {
             if (text.equals("")) {
                  super.replaceSelection(changeText(text, -1, -1));
-            } else if (getText().length() < maxlength) {
-                if (text.length() > maxlength - getText().length()) {
-                    text = text.substring(0, maxlength- getText().length());
+            } else if (getText().length() < maxLength) {
+                if (text.length() > maxLength - getText().length()) {
+                    text = text.substring(0, maxLength- getText().length());
                 }
                 super.replaceSelection(changeText(text, -1, -1));
             }
@@ -56,7 +68,7 @@ public class NumberTextField extends TextField
     }
 
     private boolean validate(String text) {
-        if(text.length() <= maxlength)
+        if(text.length() <= maxLength)
             return text.matches("[0-9]*");
         return false;
     }

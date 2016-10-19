@@ -39,6 +39,11 @@ public class WatchstopController implements Initializable {
         
     }
 
+    /**
+     * Running the watchstop
+     * @param time time to count down
+     * @param stage scene stage
+     */
     public void runWatchstop(final Time time, final Stage stage) {
         final Timeline timeline = new Timeline();
         timeline.setCycleCount(Timeline.INDEFINITE);

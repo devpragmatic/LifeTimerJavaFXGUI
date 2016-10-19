@@ -45,6 +45,11 @@ public class WatchstopConfigController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
     }    
     
+    /**
+     * Controller method for run watchstop
+     * @param event action event
+     * @throws IOException exception from WatchstopScene.start(Stage stage) method
+     */
     @FXML
     public void start(ActionEvent event) throws IOException
     {

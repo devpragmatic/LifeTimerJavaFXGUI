@@ -14,16 +14,16 @@
         </stylesheets>
         <children>
             <Label minWidth="15" >D:</Label>
-            <NumberTextField fx:id="daysField" maxlength="10"></NumberTextField>
+            <NumberTextField fx:id="daysField" maxLength="10"></NumberTextField>
 
             <Label minWidth="15">H:</Label>
-            <NumberTextField fx:id="hoursField" maxlength="2" maxValue="23" ></NumberTextField>
+            <NumberTextField fx:id="hoursField" maxLength="2" maxValue="23" ></NumberTextField>
 
             <Label minWidth="15">M:</Label>
-            <NumberTextField fx:id="minutesField" maxlength="2" maxValue="59" ></NumberTextField>
+            <NumberTextField fx:id="minutesField" maxLength="2" maxValue="59" ></NumberTextField>
 
             <Label minWidth="15">S:</Label>
-            <NumberTextField fx:id="secondsField" maxlength="2" maxValue="59" ></NumberTextField>
+            <NumberTextField fx:id="secondsField" maxLength="2" maxValue="59" ></NumberTextField>
             
             <Button minWidth="50" onAction="#start">Start</Button>
         </children>
